@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require_relative "include/my"
+
+argv = ARGV
+
+print_help_if_needed(argv)
+error_handling(argv)
+transform_each_string_into_number(argv)
+does_math(argv)

@@ -1,0 +1,24 @@
+                                                                               
+  1000 +-------------------------------------------------------------------+   
+       |          +           +          +          +           +    AAAAAA|   
+   900 |-+                                                      AAAAAAA AA-|   
+       |                                                   AAAAAAAAAAAAAAAA|   
+   800 |-+                                             AAAAA    AAAAAAAAAA-|   
+       |                                             AAA           AAA AA  |   
+   700 |-+                                           A              AAAAAA-|   
+       |                                     AAAAAAAAA             AAAAAAA |   
+   600 |-+                            AAAAAAAA       AA           AAAAA A+A|   
+       |                        AAAAAAA               AAA        AAAAAAAAAA|   
+   500 |-+                  AAAAA                       AAAA   AAAAA AAAAAA|   
+       |                AAAA                                AAAA AAAAAAAAAA|   
+   400 |-+           AAAA                                      AAAAA AA AAA|   
+       |          AAA                                           AAAAAAA AA |   
+   300 |-+      AAA                                               AAAAA AAA|   
+       |      AA                                                     AAAAA |   
+   200 |-+  AAA                                                       AAAAA|   
+       |  AAA                                                          AAAA|   
+   100 |-AA                                                             AAA|   
+       |AA        +           +          +          +           +         A|   
+     0 +-------------------------------------------------------------------+   
+       1         1.5          2         2.5         3          3.5         4   
+                                                                               

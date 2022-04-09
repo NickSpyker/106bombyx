@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+
+nbr_of_tests = 8 # <- Set the number of tests to perform.
+
+got = [0]
+
+# Name the test file "test[test number].txt", place it in "tests/expect/[here]".
+
+## Add tests here: ##
+got[1] = `./106bombyx -h`
+got[2] = `cat drawer.gnu`
+got[3] = `./106bombyx 10 10000 10010 > data && ./106bombyx 10 10000 10010`
+got[4] = `head -n 30 data`
+got[5] = `cat drawer.gnu | gnuplot`
+got[6] = `./106bombyx 10 3.3 > data && ./106bombyx 10 3.3`
+got[7] = `head data`
+got[8] = `tail data`
+## End of tests ##
+
+def print_color var, color
+    if color == 'blue'
+        printf("\033[0;34m");
+    elsif color == 'green'
+        printf("\033[0;32m");
+    else
+        printf("\033[0;31m");
+    end
+    print var
+    printf("\033[0m");
+end
+
+expect = [0]
+for x in 1..nbr_of_tests
+    expect[x] = (open "tests/expect/test#{x}.txt").read
+end
+
+tested = 0
+passing = 0
+failing = 0
+crashing = 0
+
+for i in 1..nbr_of_tests
+    if got[i] == expect[i]
+        print "-> "
+        print_color('passing', 'green')
+        puts " test #{i}"
+        passing += 1
+    elsif got[i] != expect[i]
+        failing += 1
+        print "-> "
+        print_color('failing', 'red')
+        puts " test #{i}\n"
+        puts "got:\n#{got[i]}\nbut expect:\n#{expect[i]}\n"
+    else
+        crashing += 1
+    end
+    tested += 1
+end
+
+print "\n-> Synthesis: Tested: "
+print_color(tested, 'blue')
+
+print " | Passing: "
+print_color(passing, 'green')
+
+print " | Failing: "
+print_color(failing, 'red')
+
+print " | Crashing: "
+print_color(crashing, 'red')
+
+print "\n"
+
+system "rm -rf data"
